@@ -1,0 +1,51 @@
+HOW TO USE: motor-speech-overlay
+====================================
+
+PURPOSE
+  Model clinical neurogenic and motor-speech variations (spastic, flaccid, ataxic,
+  hypokinetic, hyperkinetic dysarthria, apraxia) as parameter modifiers interfacing with core profiles.
+
+CAPABILITIES
+  - Classify neuromotor disorder: Flaccid, Spastic, Ataxic, Hypokinetic, Mixed Dysarthria, CAS
+  - Quantify laryngeal modifiers: glottal incompetence (hypoadduction) vs strain (hyperadduction)
+  - Model resonatory subsystem: velopharyngeal port leakage (mm2) and nasalance score (%)
+  - Calculate articulatory imprecision: stop spirantization rate and vowel space area compression
+  - Detail prosodic modifiers: syllable segregation, rate reduction, and monopitch indices
+  - Output machine-readable motor_speech_modifiers.json
+
+USE CASES
+  - "Model the speech characteristics of an individual with Down syndrome, Parkinson's, or ALS"
+  - You need to apply a clinical speech modifier without rewriting the entire personality profile
+  - You are developing communicative support tools or speech therapy diagnostic reports
+  - Simulating authentic neurogenic speech in medical education or dramatic characters
+
+IDEAS
+  - Always keep voice-biometric-profiler and speaking-personality-profile as the spine
+  - Apply this skill as a delta modifier on top of the baseline profile
+  - Pass the motor modifiers to synthesis-control-compiler to adjust Klatt/Kokoro parameters
+
+PROMPTS YOU CAN PASTE
+  /motor-speech-overlay adult-male-30yo Down-Syndrome
+
+  motor speech overlay for Parkinson's patient
+
+  dysarthria profile of this stroke survivor
+
+  clinical speech modifier for this subject. Model hypotonia and velopharyngeal nasalance.
+
+  What motor speech adjustments are needed to simulate flaccid dysarthria on this baseline voice?
+
+EXAMPLE FLOW
+  You:   /motor-speech-overlay 30yo-male Down-Syndrome
+  Model: 1. Neuromotor Classification: Mixed motor-speech variations secondary to hypotonia
+         2. Laryngeal Subsystem: Closed quotient delta: -0.08, intermittent vocal fry on offsets
+         3. Resonatory Subsystem: Velopharyngeal leakage: 12 mm2, nasalance score: 34%
+         4. Articulatory Subsystem: VSA compression ratio: 0.82, stop spirantization: 32%
+         5. Prosodic Subsystem: Speaking rate reduction: -0.8 sps, nPVI: 44.5
+         [motor_speech_modifiers.json]
+
+DEFAULT GOALS IF YOU DON'T NAME ONE
+  1. Clinical dysarthria / motor-speech classification
+  2. Laryngeal glottal modifier (adduction, perturbation, fry)
+  3. Velopharyngeal nasalance and articulatory imprecision parameters
+  4. Machine-readable motor_speech_modifiers.json block
